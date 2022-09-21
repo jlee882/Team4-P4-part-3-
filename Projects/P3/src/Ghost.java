@@ -16,6 +16,15 @@ public class Ghost {
   }
 
   public boolean move() {
+    ArrayList<Location> validMoves = get_valid_moves();
+
+    //relies on the locations from get_valid_moves being properly instantiated to new objects
+    //Checks if there is at least 1 valid move and if the move resolves correctly
+    if (!validMoves.isEmpty() && myMap.move(myName, validMoves.get(0), Map.Type.GHOST)){
+      myLoc = validMoves.get(0);
+      return true;
+    }
+    
     return false;
   }
 
