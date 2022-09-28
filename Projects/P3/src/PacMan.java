@@ -17,10 +17,18 @@ public class PacMan {
     ArrayList<Location> valid_moves = new ArrayList<Location>();
     if(this.myLoc.x - 1 >= 0){
       valid_moves.add(new Location(this.myLoc.x - 1, this.myLoc.y));
+      valid_moves.add(new Location(this.myLoc.x - 1, this.myLoc.y+1));
+
     }
     if(this.myLoc.y - 1 >= 0){
       valid_moves.add(new Location(this.myLoc.x, this.myLoc.y - 1));
+      valid_moves.add(new Location(this.myLoc.x + 1, this.myLoc.y+1));
     }
+    
+    if ((this.myLoc.x - 1 >= 0) && (this.myLoc.y - 1 >= 0)){
+          valid_moves.add(new Location(this.myLoc.x -1, this.myLoc.y - 1));
+    }
+    
     valid_moves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
     valid_moves.add(new Location(this.myLoc.x , this.myLoc.y + 1));
     valid_moves.add(new Location(this.myLoc.x + 1, this.myLoc.y+1));
