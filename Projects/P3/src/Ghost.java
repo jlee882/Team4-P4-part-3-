@@ -21,7 +21,7 @@ public class Ghost {
     HashSet<Type> types = this.myMap.getLoc(Location(x_val + 1, y_val))
     for (Type type : types) {
       if type != WALL {
-        moves.add(Location(x_val, y_val));
+        moves.add(Location(x_val + 1, y_val));
       }
     }
 
@@ -29,7 +29,7 @@ public class Ghost {
     HashSet<Type> types = this.myMap.getLoc(Location(x_val - 1, y_val))
     for (Type type : types) {
       if type != WALL {
-        moves.add(Location(x_val, y_val));
+        moves.add(Location(x_val - 1, y_val));
       }
     }
 
@@ -37,7 +37,7 @@ public class Ghost {
     HashSet<Type> types = this.myMap.getLoc(Location(x_val + 1, y_val + 1))
     for (Type type : types) {
       if type != WALL {
-        moves.add(Location(x_val, y_val));
+        moves.add(Location(x_val + 1, y_val + 1));
       }
     }
 
@@ -45,7 +45,7 @@ public class Ghost {
     HashSet<Type> types = this.myMap.getLoc(Location(x_val - 1, y_val + 1))
     for (Type type : types) {
       if type != WALL {
-        moves.add(Location(x_val, y_val));
+        moves.add(Location(x_val - 1, y_val + 1));
       }
     }
 
@@ -61,7 +61,7 @@ public class Ghost {
     HashSet<Type> types = this.myMap.getLoc(Location(x_val, y_val - 1))
     for (Type type : types) {
       if type != WALL {
-        moves.add(Location(x_val, y_val));
+        moves.add(Location(x_val, y_val - 1));
       }
     }
 
@@ -69,7 +69,7 @@ public class Ghost {
     HashSet<Type> types = this.myMap.getLoc(Location(x_val - 1, y_val + 1))
     for (Type type : types) {
       if type != WALL {
-        moves.add(Location(x_val, y_val));
+        moves.add(Location(x_val - 1, y_val + 1));
       }
     }
 
@@ -77,7 +77,7 @@ public class Ghost {
     HashSet<Type> types = this.myMap.getLoc(Location(x_val - 1, y_val - 1))
     for (Type type : types) {
       if type != WALL {
-        moves.add(Location(x_val, y_val));
+        moves.add(Location(x_val - 1, y_val - 1));
       }
     }
 
