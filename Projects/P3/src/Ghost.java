@@ -12,7 +12,76 @@ public class Ghost {
   }
 
   public ArrayList<Location> get_valid_moves() {
-    return null;
+    ArrayList<Location> moves = new ArrayList<Location>();
+    Location curr_loc = this.myLoc;
+    int x_val = curr_loc.x
+    int y_val = curr_loc.y
+
+    // to the right
+    HashSet<Type> types = this.myMap.getLoc(Location(x_val + 1, y_val))
+    for (Type type : types) {
+      if type != WALL {
+        moves.add(Location(x_val + 1, y_val));
+      }
+    }
+
+    // to the left
+    HashSet<Type> types = this.myMap.getLoc(Location(x_val - 1, y_val))
+    for (Type type : types) {
+      if type != WALL {
+        moves.add(Location(x_val - 1, y_val));
+      }
+    }
+
+    // to the upper right corner
+    HashSet<Type> types = this.myMap.getLoc(Location(x_val + 1, y_val + 1))
+    for (Type type : types) {
+      if type != WALL {
+        moves.add(Location(x_val + 1, y_val + 1));
+      }
+    }
+
+    // to the lower right corner
+    HashSet<Type> types = this.myMap.getLoc(Location(x_val - 1, y_val + 1))
+    for (Type type : types) {
+      if type != WALL {
+        moves.add(Location(x_val - 1, y_val + 1));
+      }
+    }
+
+    // up 
+    HashSet<Type> types = this.myMap.getLoc(Location(x_val, y_val + 1))
+    for (Type type : types) {
+      if type != WALL {
+        moves.add(Location(x_val, y_val));
+      }
+    }
+
+    // down
+    HashSet<Type> types = this.myMap.getLoc(Location(x_val, y_val - 1))
+    for (Type type : types) {
+      if type != WALL {
+        moves.add(Location(x_val, y_val - 1));
+      }
+    }
+
+    // upper left corner
+    HashSet<Type> types = this.myMap.getLoc(Location(x_val - 1, y_val + 1))
+    for (Type type : types) {
+      if type != WALL {
+        moves.add(Location(x_val - 1, y_val + 1));
+      }
+    }
+
+    // lower left corner
+    HashSet<Type> types = this.myMap.getLoc(Location(x_val - 1, y_val - 1))
+    for (Type type : types) {
+      if type != WALL {
+        moves.add(Location(x_val - 1, y_val - 1));
+      }
+    }
+
+    return moves;
   }
 
   public boolean move() {
