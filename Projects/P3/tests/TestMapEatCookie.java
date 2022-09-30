@@ -4,6 +4,10 @@ import junit.framework.*;
 public class TestMapEatCookie extends TestCase {
 
   public void testMapEatCookie() throws FileNotFoundException {
-    return null;
+    Mainframe frame = new MainFrame(); 
+    NoFrame frame = new NoFrame(); 
+
+    PacMan pacman = frame.addPacMan(new Location(1, 2));
+    assertTrue(frame.getMap.eatCookie("pacman") != null);
   }
 }
