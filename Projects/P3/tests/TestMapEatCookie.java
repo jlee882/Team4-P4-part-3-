@@ -3,6 +3,7 @@ import junit.framework.*;
 
 public class TestMapEatCookie extends TestCase {
 
+  @Test
   public void testMapEatCookie() throws FileNotFoundException {
     Mainframe frame = new MainFrame(); 
     NoFrame frame = new NoFrame(); 
