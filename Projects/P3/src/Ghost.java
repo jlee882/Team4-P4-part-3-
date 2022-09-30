@@ -98,6 +98,23 @@ public class Ghost {
   }
 
   public boolean is_pacman_in_range() {
+    ArrayList<Location> radiusAttack = new ArrayList<>();
+    radiusAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y));
+    radiusAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+    radiusAttack.add(new Location(this.myLoc.x, this.myLoc.y - 1));
+    radiusAttack.add(new Location(this.myLoc.x, this.myLoc.y + 1));
+    radiusAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y + 1));
+    radiusAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y - 1));
+    radiusAttack.add(new Location(this.myLoc.x, this.myLoc.y));
+    radiusAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y + 1));
+    radiusAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y - 1));
+
+    for(Location loc : radiusAttack){
+      if(this.myMap.getLoc(loc).contains(Map.Type.PACMAN)){
+        return true;
+      }
+    }
+
     return false;
   }
 
