@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Ghost {
   String myName;
@@ -14,70 +15,82 @@ public class Ghost {
   public ArrayList<Location> get_valid_moves() {
     ArrayList<Location> moves = new ArrayList<Location>();
     Location curr_loc = this.myLoc;
-    int x_val = curr_loc.x
-    int y_val = curr_loc.y
+    int x_val = curr_loc.x;
+    int y_val = curr_loc.y;
 
     // to the right
-    HashSet<Type> types = this.myMap.getLoc(Location(x_val + 1, y_val))
-    for (Type type : types) {
-      if type != WALL {
-        moves.add(Location(x_val + 1, y_val));
+    Location loc = new Location(x_val + 1, y_val);
+    HashSet<Map.Type> types = this.myMap.getLoc(loc);
+    for (Map.Type type : types) {
+      if (type != Map.Type.WALL) {
+        moves.add(loc);
       }
     }
 
+    // FIX THE REST OF TYPE ERRORS
+
     // to the left
-    HashSet<Type> types = this.myMap.getLoc(Location(x_val - 1, y_val))
-    for (Type type : types) {
-      if type != WALL {
-        moves.add(Location(x_val - 1, y_val));
+    loc = new Location(x_val - 1, y_val);
+    // HashSet<Map.Type> types = this.myMap.getLoc(loc);
+    types = this.myMap.getLoc(loc);
+    for (Map.Type type : types) {
+      if (type != Map.Type.WALL) {
+        moves.add(loc);
       }
     }
 
     // to the upper right corner
-    HashSet<Type> types = this.myMap.getLoc(Location(x_val + 1, y_val + 1))
-    for (Type type : types) {
-      if type != WALL {
-        moves.add(Location(x_val + 1, y_val + 1));
+    loc = new Location(x_val + 1, y_val + 1);
+    types = this.myMap.getLoc(loc);
+    for (Map.Type type : types) {
+      if (type != Map.Type.WALL) {
+        moves.add(loc);
       }
     }
 
     // to the lower right corner
-    HashSet<Type> types = this.myMap.getLoc(Location(x_val - 1, y_val + 1))
-    for (Type type : types) {
-      if type != WALL {
-        moves.add(Location(x_val - 1, y_val + 1));
+    loc = new Location(x_val + 1, y_val - 1);
+    // HashSet<Map.Type> types = this.myMap.getLoc(loc);
+    types = this.myMap.getLoc(loc);
+    for (Map.Type type : types) {
+      if (type != Map.Type.WALL) {
+        moves.add(loc);
       }
     }
 
     // up 
-    HashSet<Type> types = this.myMap.getLoc(Location(x_val, y_val + 1))
-    for (Type type : types) {
-      if type != WALL {
-        moves.add(Location(x_val, y_val));
+    loc = new Location(x_val, y_val + 1);
+    types = this.myMap.getLoc(loc);
+    for (Map.Type type : types) {
+      if (type != Map.Type.WALL) {
+        moves.add(loc);
       }
     }
 
     // down
-    HashSet<Type> types = this.myMap.getLoc(Location(x_val, y_val - 1))
-    for (Type type : types) {
-      if type != WALL {
-        moves.add(Location(x_val, y_val - 1));
+    loc = new Location(x_val, y_val - 1);
+    types = this.myMap.getLoc(loc);
+    for (Map.Type type : types) {
+      if (type != Map.Type.WALL) {
+        moves.add(loc);
       }
     }
 
     // upper left corner
-    HashSet<Type> types = this.myMap.getLoc(Location(x_val - 1, y_val + 1))
-    for (Type type : types) {
-      if type != WALL {
-        moves.add(Location(x_val - 1, y_val + 1));
+    loc = new Location(x_val - 1, y_val + 1);
+    types = this.myMap.getLoc(loc);
+    for (Map.Type type : types) {
+      if (type != Map.Type.WALL) {
+        moves.add(loc);
       }
     }
 
     // lower left corner
-    HashSet<Type> types = this.myMap.getLoc(Location(x_val - 1, y_val - 1))
-    for (Type type : types) {
-      if type != WALL {
-        moves.add(Location(x_val - 1, y_val - 1));
+    loc = new Location(x_val - 1, y_val - 1);
+    types = this.myMap.getLoc(loc);
+    for (Map.Type type : types) {
+      if (type != Map.Type.WALL) {
+        moves.add(loc);
       }
     }
 
