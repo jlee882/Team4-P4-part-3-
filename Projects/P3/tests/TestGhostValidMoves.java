@@ -1,5 +1,7 @@
+import java.awt.Color;
 import java.io.*;
 import junit.framework.*;
+import java.util.ArrayList;
 
 public class TestGhostValidMoves extends TestCase {
 
@@ -12,8 +14,9 @@ public class TestGhostValidMoves extends TestCase {
     Location down = new Location(1, 2);
     Location right = new Location(2, 1);
 
-    possible_locs.append(down, right);
+    possible_locs.add(down);
+    possible_locs.add(right);
 
-    assertTrue(ghost.get_valid_moves().containsAll(possible_locs));
+    assert (ghost.get_valid_moves().containsAll(possible_locs));
   }
 }
