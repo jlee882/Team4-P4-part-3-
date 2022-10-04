@@ -76,14 +76,15 @@ public class Map {
     Location pacman_loc = locations.get(name);
     String tok = "tok_x" + pacman_loc.x + "_y" + pacman_loc.y;
 
-    if components.containsKey(tok) {
-      JComponent curr_comp = components.get(tok);
-      if curr_comp.getComponentType() == COOKIE {
+    if (components.containsKey(tok)) {
+      //JComponent curr_comp = components.get(tok);
+      if (components.get(tok) instanceof CookieComponent) {
+        JComponent ret_cookie = components.get(tok);
         locations.remove(tok);
         components.remove(tok);
-        field.get(loc).remove(curr_type);
+        field.get(pacman_loc).remove(components.get(tok));
         cookies--;
-        return curr_comp;
+        return ret_cookie;
       }
       else {
         return null;
