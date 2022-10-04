@@ -13,16 +13,16 @@
     2. move() - DESCRIPTION HERE:
       - Implementation: DESCRIPTION HERE
       - Tests: DESCRIPTION HERE
-    3. is_ghost_in_range() - DESCRIPTION HERE:
-      - Implementation: DESCRIPTION HERE
-      - Tests: DESCRIPTION HERE
+    3. is_ghost_in_range() - Function that returns true if a ghost is nearby (1 unit distance away), false otherwise.:
+      - Implementation: Stored x and y coordinates of location and also stores what Types are within the range of pacman's current position. In each possible location, it is checked to see if a Ghost exists. 
+      - Tests: A test for when a Ghost is in range of Pacman.
     4. consume() - DESCRIPTION HERE:
       - Implementation: DESCRIPTION HERE
       - Tests: DESCRIPTION HERE
   - Ghost Class
-    1. get_valid_moves() - DESCRIPTION HERE:
-      - Implementation: DESCRIPTION HERE
-      - Tests: DESCRIPTION HERE
+    1. get_valid_moves() - Function returns an Arraylist of Locations for where the Ghost can move to based on its current position.:
+      - Implementation: Created an ArrayList (to be returned) that contains where the Ghost can move based on its current position (while making sure that a wall will not be in the way).
+      - Tests: A test seeing if the ghost can move to positions that are available.
     2. move() - DESCRIPTION HERE:
       - Implementation: DESCRIPTION HERE
       - Tests: DESCRIPTION HERE
