@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Random;
 import javax.swing.JComponent;
 
 public class PacMan {
@@ -15,10 +16,45 @@ public class PacMan {
   }
 
   public ArrayList<Location> get_valid_moves() {
-    return null;
+    ArrayList<Location> valid_moves = new ArrayList<Location>();
+    if(this.myLoc.x - 1 >= 0){
+      valid_moves.add(new Location(this.myLoc.x - 1, this.myLoc.y));
+      valid_moves.add(new Location(this.myLoc.x - 1, this.myLoc.y+1));
+
+    }
+    if(this.myLoc.y - 1 >= 0){
+      valid_moves.add(new Location(this.myLoc.x, this.myLoc.y - 1));
+      valid_moves.add(new Location(this.myLoc.x + 1, this.myLoc.y-1));
+    }
+    
+    if ((this.myLoc.x - 1 >= 0) && (this.myLoc.y - 1 >= 0)){
+          valid_moves.add(new Location(this.myLoc.x -1, this.myLoc.y - 1));
+    }
+    
+    valid_moves.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+    valid_moves.add(new Location(this.myLoc.x , this.myLoc.y + 1));
+    valid_moves.add(new Location(this.myLoc.x + 1, this.myLoc.y+1));
+
+    valid_moves.removeIf(loc -> this.myMap.getLoc(loc).contains(Map.Type.WALL));
+
+    return valid_moves;
   }
 
   public boolean move() {
+    ArrayList<Location> validMoves = get_valid_moves();
+	
+    if (validMoves.isEmpty()) {
+      return false;
+    }
+    
+    Random rand = new Random();
+    Location nextMove = validMoves.get(rand.nextInt(validMoves.size()));
+      
+    if (myMap.move(myName, nextMove, Map.Type.PACMAN)) {
+      myLoc = nextMove;
+      return true;
+    }
+    
     return false;
   }
 
@@ -120,6 +156,12 @@ public class PacMan {
   }
 
   public JComponent consume() {
+    HashSet<Map.Type> locTypes = myMap.getLoc(myLoc);
+
+    if (locTypes.contains(Map.Type.COOKIE)){
+      return myMap.eatCookie(myName);
+    }
+
     return null;
   }
 }
