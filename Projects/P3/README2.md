@@ -5,5 +5,5 @@
 1. Image of Playing PacMan
 2. How to run the code from the command line
 3. Functions Written
-...
+
 
