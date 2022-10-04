@@ -51,10 +51,28 @@ public class Map {
     return gameOver;
   }
 
+  
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
-    return false;
+
+    //Check for existance of name and location in current map. No target validation
+    if (!locations.containsKey(name) || !components.containsKey(name) 
+      || !field.containsKey(loc)){
+      return false;
+    }
+
+    Location prevLoc = locations.get(name);
+
+    //Change items
+    components.get(name).setLocation(loc.x, loc.y);
+    locations.replace(name, loc);
+    field.get(loc).add(type);
+
+    //Cleanup
+    field.get(prevLoc).remove(type);
+
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
