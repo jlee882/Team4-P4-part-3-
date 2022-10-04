@@ -5,7 +5,7 @@
 1. Image of Playing PacMan
 2. How to run the code from the command line
   - 
-4. Functions Written
+3. Functions Written
   - PacMan Class
     1. get_valid_moves()
     2. move()
