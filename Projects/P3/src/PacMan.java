@@ -14,6 +14,7 @@ public class PacMan {
   }
 
   public ArrayList<Location> get_valid_moves() {
+    
     ArrayList<Location> valid_moves = new ArrayList<Location>();
     if(this.myLoc.x - 1 >= 0){
       valid_moves.add(new Location(this.myLoc.x - 1, this.myLoc.y));
