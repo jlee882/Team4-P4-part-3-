@@ -60,6 +60,6 @@
 
 ## Running Program
 ### Compilation
-`javac MainFrame.java`
+`javac -cp "src/" src/*.java`
 ### Execution
-`java MainFrame`
+`java -cp "src/" StartMenu`
