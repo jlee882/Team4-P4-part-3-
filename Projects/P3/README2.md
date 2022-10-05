@@ -9,8 +9,8 @@
 ### PacMan Class
 #### get_valid_moves()
 **Description:** Function that returns an ArrayList that contains all possible moves for PACMAN (stored as LOCATIONS).<br />
-**Implementation:**<br />
-**Tests:**<br />
+**Implementation:** Add all possible moves in a 1 unit radius to PACMAN, and remove any locations that contain a WALL in it.<br />
+**Tests:** Test places a pacman on the board and confirms that get_valid_moves() only returns valid known good locations.<br />
 #### move()
 **Description:** Function that moves PACMAN by 1 unit and returns a boolean indicating whether or not PACMAN was able to move.<br />
 **Implementation:** Stored all valid moves from get_valid_moves() in an ArrayList and simply picked a random move from the list.<br />
@@ -34,7 +34,7 @@
 **Tests:**<br />
 #### is_pacman_in_range()
 **Description:** This function checks if there is a PACMAN in the attack radius (+- 1 to x,y) of a given ghost. If so, return true, and false if not.<br />
-**Implementation:**<br />
+**Implementation:** Checks a 1 unit radius and uses Map's getLoc to check if pacman is inside any of said spaces<br />
 **Tests:** Places a PACMAN and Ghost on the board and verifies if is_pacman_in_range is correct.<br />
 #### attack()
 **Description:** If PACMAN is in attack range, this function handles the ghost attacking PACMAN and returns a boolean indicating if the ghost was successfully able to attack PACMAN.<br />
@@ -47,8 +47,8 @@
 **Tests:**<br />
 #### getLoc()
 **Description:** Function that returns a HashSet containing various map types (GHOST, PACMAN, EMPTY, etc), for a location argument, based on the board's status at any given moment.<br />
-**Implementation:**<br />
-**Tests:**<br />
+**Implementation:** Returns the Location found in the field variable, and  a set with just an Empty if the location DNE.<br />
+**Tests:** Places items on the game map and confirms that getLoc returns the correct information.<br />
 #### attack()
 **Description:** Map handler for when a ghost attacks PACMAN.<br />
 **Implementation:** Set the gameOver class variable to true.<br />
