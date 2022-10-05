@@ -80,7 +80,7 @@ public class Map {
         locations.remove(tok);
         components.remove(tok);
         field.get(pacman_loc).remove(components.get(tok));
-        cookies--;
+        cookies++;
         return ret_cookie;
       }
       else {
