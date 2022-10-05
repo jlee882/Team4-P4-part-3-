@@ -26,9 +26,8 @@
     2. move() - DESCRIPTION HERE:
       - Implementation: DESCRIPTION HERE
       - Tests: DESCRIPTION HERE
-    3. is_pacman_in_range() - DESCRIPTION HERE:
-      - Implementation: DESCRIPTION HERE
-      - Tests: DESCRIPTION HERE
+    3. is_pacman_in_range() - This function checks if there is a PACMAN in the attack radius (+- 1 to x,y) of a given ghost. If so, return true, and false if not.
+      - Tests: Places a PACMAN and Ghost on the board and verifies if is_pacman_in_range is correct.
     4. attack()
   - Map Class
     1. move() - DESCRIPTION HERE:
@@ -43,5 +42,4 @@
     5. eatCookie() - Function that returns the Cookie Component if it got eaten by PacMan, otherwise it returns null.:
       - Implementation: Stores the location, token of the pacman given. Checks to see if components variable contains that token (has an existing key) and if so, will check if a component at that token has a cookie. If that is also true, locations, components, and field variables are updated to remove the cookie, and the cookie that was eated (removed) is returned. Otherwise null is returned. 
       - Tests: A test for if a cookie and pacman are at the same location, and a test for if a cookie and pacman are not in the same location.
-
 
