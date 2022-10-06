@@ -20,18 +20,18 @@
 **Implementation:** Stored x and y coordinates of location and also stores what Types are within the range of pacman's current position. In each possible location, it is checked to see if a Ghost exists.<br />
 **Tests:** A test for when a Ghost is in range of Pacman.<br />
 #### consume()
-**Description:**<br />
-**Implementation:**<br />
-**Tests:**<br />
+**Description:** Function looks for a cookie at pacman's location and consumes it if present.<br />
+**Implementation:** Gets Types at location, then checks for occurrence of COOKIE. If found, calls Map eatCookie, else null.<br />
+**Tests:** Adds two Pacman (men?) to locations with and without a cookie, then calls consume to check if they properly consumed.<br />
 ### Ghost Class
 #### get_valid_moves()
 **Description:** Function returns an Arraylist of Locations for where the Ghost can move to based on its current position.<br />
 **Implementation:** Created an ArrayList (to be returned) that contains where the Ghost can move based on its current position (while making sure that a wall will not be in the way).<br />
 **Tests:** A test seeing if the ghost can move to positions that are available.<br />
 #### move()
-**Description:**<br />
-**Implementation:**<br />
-**Tests:**<br />
+**Description:** Function that moves a ghost by 1 unit and returns a boolean on whether the move was successfull.<br />
+**Implementation:** Gets list of locations from getValidMoves, then calls Map move on the first location in the List.<br />
+**Tests:** Gets a List of valid moves for a ghost, calls move, then checks if its location is in that list.<br />
 #### is_pacman_in_range()
 **Description:** This function checks if there is a PACMAN in the attack radius (+- 1 to x,y) of a given ghost. If so, return true, and false if not.<br />
 **Implementation:** Checks a 1 unit radius and uses Map's getLoc to check if pacman is inside any of said spaces<br />
@@ -42,9 +42,11 @@
 **Tests:** Placed a ghost that was out of attack range and one that was in attack range. Then, asserted that the out of range ghost attack returned false and the in range ghost attack returned true and ended the game.<br />
 ### Map Class
 #### move()
-**Description:**<br />
-**Implementation:**<br />
-**Tests:**<br />
+**Description:** Function that base level processes movement of game components. Returns whether the movement succeeded or not as a boolean.<br />
+**Implementation:** First checks if the given name, location, and component are present, otherwise returns false. Then, temporarily stores the current
+character location. To execute the movement: Updates the location, calls setLocation on the component with the location x and y, and adds the 
+"client" type to the field location. Finally, removes the type from the original location in the field and returns true.<br />
+**Tests:** Declares a pacman, then calls Map move on itself through the myMap parameter. Manually verifies the new location now contains the pacman.<br />
 #### getLoc()
 **Description:** Function that returns a HashSet containing various map types (GHOST, PACMAN, EMPTY, etc), for a location argument, based on the board's status at any given moment.<br />
 **Implementation:** Returns the Location found in the field variable, and  a set with just an Empty if the location DNE.<br />
