@@ -12,3 +12,38 @@ jobs:
         run: |
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
+  testGetLoc:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Tests
+        run: |
+          javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
+          javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
+          cd Projects/P3/
+          java -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestMapGetLoc
+  testPacmanValidMoves:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Tests
+        run: |
+          javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
+          javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
+          cd Projects/P3/
+          java -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestPacManValidMoves
+          
+  testGhostIsPacmanInRange:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Tests
+        run: |
+          javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
+          javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
+          cd Projects/P3/
+          java -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestPacManInRange       
+          
