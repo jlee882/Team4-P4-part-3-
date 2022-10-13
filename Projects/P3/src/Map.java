@@ -76,10 +76,8 @@ public class Map {
   }
 
   public HashSet<Type> getLoc(Location loc) {
-        if(field.get(loc) == null) {
-      return emptySet;
-    }
-    return field.get(loc);
+ 
+   return field.get(loc);
   }
 
   public boolean attack(String Name) {
