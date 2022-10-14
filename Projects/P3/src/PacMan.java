@@ -34,7 +34,6 @@ public ArrayList<Location> get_valid_moves() {
     valid_moves.add(new Location(this.myLoc.x , this.myLoc.y + 1));
     valid_moves.add(new Location(this.myLoc.x + 1, this.myLoc.y+1));
 
-    valid_moves.removeIf(loc -> this.myMap.getLoc(loc).contains(Map.Type.WALL));
 
     return valid_moves;
   }
