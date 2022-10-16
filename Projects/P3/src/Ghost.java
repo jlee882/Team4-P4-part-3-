@@ -27,11 +27,8 @@ public class Ghost {
       }
     }
 
-    // FIX THE REST OF TYPE ERRORS
-
     // to the left
     loc = new Location(x_val - 1, y_val);
-    // HashSet<Map.Type> types = this.myMap.getLoc(loc);
     types = this.myMap.getLoc(loc);
     for (Map.Type type : types) {
       if (type != Map.Type.WALL) {
@@ -50,7 +47,6 @@ public class Ghost {
 
     // to the lower right corner
     loc = new Location(x_val + 1, y_val - 1);
-    // HashSet<Map.Type> types = this.myMap.getLoc(loc);
     types = this.myMap.getLoc(loc);
     for (Map.Type type : types) {
       if (type != Map.Type.WALL) {
@@ -58,16 +54,7 @@ public class Ghost {
       }
     }
 
-    // up 
-    loc = new Location(x_val, y_val + 1);
-    types = this.myMap.getLoc(loc);
-    for (Map.Type type : types) {
-      if (type != Map.Type.WALL) {
-        moves.add(loc);
-      }
-    }
-
-    // down
+    // up
     loc = new Location(x_val, y_val - 1);
     types = this.myMap.getLoc(loc);
     for (Map.Type type : types) {

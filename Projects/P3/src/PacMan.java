@@ -111,18 +111,8 @@ public ArrayList<Location> get_valid_moves() {
       }
     }
 
-    // to the bottom
-    loc = new Location(x_val, y_val - 1);
-    types_at_loc = this.myMap.getLoc(loc);
-
-    for (Map.Type type : types_at_loc) {
-      if (type.equals(Map.Type.GHOST)) {
-        return true;
-      }
-    }
-
     // to the top
-    loc = new Location(x_val, y_val + 1);
+    loc = new Location(x_val, y_val - 1);
     types_at_loc = this.myMap.getLoc(loc);
 
     for (Map.Type type : types_at_loc) {
