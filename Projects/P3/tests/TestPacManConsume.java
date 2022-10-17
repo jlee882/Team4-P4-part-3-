@@ -3,9 +3,9 @@ import java.util.List;
 
 import junit.framework.*;
 
-public class TestConsume extends TestCase {
+public class TestPacManConsume extends TestCase {
 
-public void testPacManMove() throws FileNotFoundException {
+public void testPacManConsume() throws FileNotFoundException {
 	  NoFrame frame = new NoFrame();	    
 	  PacMan pacman = frame.addPacMan(new Location(1, 2));
     assert (pacman.consume() != null);
