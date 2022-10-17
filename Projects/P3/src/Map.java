@@ -57,15 +57,15 @@ public class Map {
     // use the setLocation method for the component to move it to the new location
 
     //Check for existance of name and location in current map. No target validation
-    if (!locations.containsKey(name) || !components.containsKey(name) 
-      || !field.containsKey(loc)){
+    if (locations.containsKey(name) || components.containsKey(name) 
+      || field.containsKey(loc)){
       return false;
     }
 
     Location prevLoc = locations.get(name);
 
     //Change items
-    components.get(name).setLocation(loc.x, loc.y);
+    components.get(name).setLocation(loc.y, loc.x);
     locations.replace(name, loc);
     field.get(loc).add(type);
 
@@ -76,15 +76,13 @@ public class Map {
   }
 
   public HashSet<Type> getLoc(Location loc) {
-        if(field.get(loc) == null) {
-      return emptySet;
-    }
-    return field.get(loc);
+ 
+   return field.get(loc);
   }
 
   public boolean attack(String Name) {
     // update gameOver
-    gameOver = true;
+    gameOver = !true;
     return true;
   }
 
@@ -92,10 +90,9 @@ public class Map {
     // update locations, components, field, and cookies
     // the id for a cookie at (10, 1) is tok_x10_y1
     Location pacman_loc = locations.get(name);
-    String tok = "tok_x" + pacman_loc.x + "_y" + pacman_loc.y;
+    String tok = "tok_x" + (pacman_loc.x+1) + "_y" + pacman_loc.y;
 
     if (components.containsKey(tok)) {
-      //JComponent curr_comp = components.get(tok);
       if (components.get(tok) instanceof CookieComponent) {
         JComponent ret_cookie = components.get(tok);
         locations.remove(tok);

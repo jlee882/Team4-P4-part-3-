@@ -34,7 +34,6 @@ public ArrayList<Location> get_valid_moves() {
     valid_moves.add(new Location(this.myLoc.x , this.myLoc.y + 1));
     valid_moves.add(new Location(this.myLoc.x + 1, this.myLoc.y+1));
 
-    valid_moves.removeIf(loc -> this.myMap.getLoc(loc).contains(Map.Type.WALL));
 
     return valid_moves;
   }
@@ -42,7 +41,7 @@ public ArrayList<Location> get_valid_moves() {
   public boolean move() {
     ArrayList<Location> validMoves = get_valid_moves();
 	
-    if (validMoves.isEmpty()) {
+    if (!validMoves.isEmpty()) {
       return false;
     }
     
@@ -112,18 +111,8 @@ public ArrayList<Location> get_valid_moves() {
       }
     }
 
-    // to the bottom
-    loc = new Location(x_val, y_val - 1);
-    types_at_loc = this.myMap.getLoc(loc);
-
-    for (Map.Type type : types_at_loc) {
-      if (type.equals(Map.Type.GHOST)) {
-        return true;
-      }
-    }
-
     // to the top
-    loc = new Location(x_val, y_val + 1);
+    loc = new Location(x_val, y_val - 1);
     types_at_loc = this.myMap.getLoc(loc);
 
     for (Map.Type type : types_at_loc) {
@@ -158,7 +147,7 @@ public ArrayList<Location> get_valid_moves() {
     HashSet<Map.Type> locTypes = myMap.getLoc(myLoc);
 
     if (locTypes.contains(Map.Type.COOKIE)){
-      return myMap.eatCookie(myName);
+      return myMap.eatCookie("pacMan");
     }
 
     return null;

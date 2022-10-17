@@ -27,11 +27,8 @@ public class Ghost {
       }
     }
 
-    // FIX THE REST OF TYPE ERRORS
-
     // to the left
     loc = new Location(x_val - 1, y_val);
-    // HashSet<Map.Type> types = this.myMap.getLoc(loc);
     types = this.myMap.getLoc(loc);
     for (Map.Type type : types) {
       if (type != Map.Type.WALL) {
@@ -50,7 +47,6 @@ public class Ghost {
 
     // to the lower right corner
     loc = new Location(x_val + 1, y_val - 1);
-    // HashSet<Map.Type> types = this.myMap.getLoc(loc);
     types = this.myMap.getLoc(loc);
     for (Map.Type type : types) {
       if (type != Map.Type.WALL) {
@@ -58,16 +54,7 @@ public class Ghost {
       }
     }
 
-    // up 
-    loc = new Location(x_val, y_val + 1);
-    types = this.myMap.getLoc(loc);
-    for (Map.Type type : types) {
-      if (type != Map.Type.WALL) {
-        moves.add(loc);
-      }
-    }
-
-    // down
+    // up
     loc = new Location(x_val, y_val - 1);
     types = this.myMap.getLoc(loc);
     for (Map.Type type : types) {
@@ -102,7 +89,7 @@ public class Ghost {
 
     //relies on the locations from get_valid_moves being properly instantiated to new objects
     //Checks if there is at least 1 valid move and if the move resolves correctly
-    if (!validMoves.isEmpty() && myMap.move(myName, validMoves.get(0), Map.Type.GHOST)){
+    if (validMoves.isEmpty() && myMap.move(myName, validMoves.get(0), Map.Type.GHOST)){
       myLoc = validMoves.get(0);
       return true;
     }
@@ -122,17 +109,12 @@ public class Ghost {
     radiusAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y + 1));
     radiusAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y - 1));
 
-    for(Location loc : radiusAttack){
-      if(this.myMap.getLoc(loc).contains(Map.Type.PACMAN)){
-        return true;
-      }
-    }
-
+  
     return false;
   }
 
   public boolean attack() {
-    if (is_pacman_in_range()) {
+    if (!is_pacman_in_range()) {
       return myMap.attack(myName);
     }
 
