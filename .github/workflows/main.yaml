@@ -22,7 +22,7 @@ jobs:
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
           cd Projects/P3/
-          java -cp -ea "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestMapGetLoc
+          java -ea -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestMapGetLoc
   testPacmanValidMoves:
     runs-on: ubuntu-latest
     container: openjdk
@@ -33,7 +33,7 @@ jobs:
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
           cd Projects/P3/
-          java -cp -ea  "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestPacManValidMoves
+          java -ea -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestPacManValidMoves
           
   testGhostIsPacmanInRange:
     runs-on: ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
           cd Projects/P3/
-          java -cp -ea  "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestPacManInRange
+          java -ea -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestPacManInRange
 
   testEatCookie:
     runs-on: ubuntu-latest
@@ -57,7 +57,7 @@ jobs:
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
           cd Projects/P3/
-          java -cp -ea  "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestMapEatCookie
+          java -ea -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestMapEatCookie
 
   testGhostValidMoves:
     runs-on: ubuntu-latest
@@ -69,7 +69,7 @@ jobs:
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
           cd Projects/P3/
-          java -cp -ea  "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestGhostValidMoves
+          java -ea -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestGhostValidMoves
 
   testGhostInRange:
     runs-on: ubuntu-latest
@@ -81,7 +81,7 @@ jobs:
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
           cd Projects/P3/
-          java -cp -ea  "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestGhostInRange       
+          java -ea -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestGhostInRange       
           
   testAttack:
     runs-on: ubuntu-latest
@@ -93,7 +93,7 @@ jobs:
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
           cd Projects/P3/
-          java -cp -ea  "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestAttack
+          java -ea -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestAttack
 
   testMapAttack:
     runs-on: ubuntu-latest
@@ -105,7 +105,7 @@ jobs:
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
           cd Projects/P3/
-          java -cp -ea  "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestMapAttack
+          java -ea -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestMapAttack
 
   testPacManMove:
     runs-on: ubuntu-latest
@@ -117,7 +117,7 @@ jobs:
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
           cd Projects/P3/
-          java -cp -ea  "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestPacManMove
+          java -ea -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestPacManMove
 
   testPacManConsume:
     runs-on: ubuntu-latest
@@ -129,7 +129,7 @@ jobs:
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
           cd Projects/P3/
-          java -cp -ea  "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestPacManConsume
+          java -ea -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestPacManConsume
 
   testMapMove:
     runs-on: ubuntu-latest
@@ -141,7 +141,7 @@ jobs:
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
           cd Projects/P3/
-          java -cp -ea  "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestMapMove
+          java -ea -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestMapMove
 
   testGhostMove:
     runs-on: ubuntu-latest
@@ -153,5 +153,5 @@ jobs:
           javac -cp ".:Projects/P3/tests/junit-4.10.jar" Projects/P3/src/*.java
           javac -cp "Projects/P3/src/:.:Projects/P3/tests/junit-4.10.jar" Projects/P3/tests/*.java
           cd Projects/P3/
-          java -cp -ea  "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestGhostMove
+          java -ea -cp "src/:tests/:tests/junit-4.10.jar" org.junit.runner.JUnitCore TestGhostMove
 
