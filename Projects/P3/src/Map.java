@@ -57,15 +57,15 @@ public class Map {
     // use the setLocation method for the component to move it to the new location
 
     //Check for existance of name and location in current map. No target validation
-    if (!locations.containsKey(name) || !components.containsKey(name) 
-      || !field.containsKey(loc)){
+    if (locations.containsKey(name) || components.containsKey(name) 
+      || field.containsKey(loc)){
       return false;
     }
 
     Location prevLoc = locations.get(name);
 
     //Change items
-    components.get(name).setLocation(loc.x, loc.y);
+    components.get(name).setLocation(loc.y, loc.x);
     locations.replace(name, loc);
     field.get(loc).add(type);
 
