@@ -66,7 +66,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
 
@@ -76,7 +76,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
       
@@ -87,7 +87,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
 
@@ -97,7 +97,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
 
@@ -107,7 +107,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
 
@@ -117,7 +117,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
 
@@ -127,7 +127,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
 
@@ -137,7 +137,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
 
@@ -147,7 +147,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
     return false;
