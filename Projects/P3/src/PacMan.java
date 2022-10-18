@@ -157,7 +157,7 @@ public ArrayList<Location> get_valid_moves() {
     HashSet<Map.Type> locTypes = myMap.getLoc(myLoc);
 
     if (locTypes.contains(Map.Type.COOKIE)){
-      return myMap.eatCookie("pacMan");
+      return myMap.eatCookie(myName);
     }
 
     return null;
