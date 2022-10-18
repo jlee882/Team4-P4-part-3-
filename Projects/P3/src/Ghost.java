@@ -121,7 +121,7 @@ public class Ghost {
     radiusAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y - 1));
 
     for(Location loc : radiusAttack){
-      if(this.myMap.getLoc(loc).contains(Map.Type.PACMAN)){
+      if(this.myMap.getLoc(loc) != null && this.myMap.getLoc(loc).contains(Map.Type.PACMAN)){
         return true;
       }
     }
