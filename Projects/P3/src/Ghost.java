@@ -14,7 +14,6 @@ public class Ghost {
 
   public ArrayList<Location> get_valid_moves() {
     ArrayList<Location> moves = new ArrayList<Location>();
-    ArrayList<Location> moves2 = new ArrayList<Location>();
     Location curr_loc = this.myLoc;
     int x_val = curr_loc.x;
     int y_val = curr_loc.y;
@@ -65,7 +64,7 @@ public class Ghost {
     }
 
     // down
-    loc = new Location(x_val + 1, y_val + 1);
+    loc = new Location(x_val, y_val + 1);
     types = this.myMap.getLoc(loc);
     for (Map.Type type : types) {
       if (type != Map.Type.WALL) {
@@ -91,7 +90,6 @@ public class Ghost {
       }
     }
     
-    moves = moves2;
     return moves;
   }
 
