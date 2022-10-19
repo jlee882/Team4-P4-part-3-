@@ -90,7 +90,7 @@ public class Map {
     // update locations, components, field, and cookies
     // the id for a cookie at (10, 1) is tok_x10_y1
     Location pacman_loc = locations.get(name);
-    String tok = "tok_x" + (pacman_loc.x+1) + "_y" + pacman_loc.y;
+    String tok = "tok_x" + (pacman_loc.x) + "_y" + pacman_loc.y;
 
     if (components.containsKey(tok)) {
       if (components.get(tok) instanceof CookieComponent) {
