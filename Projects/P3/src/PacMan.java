@@ -42,7 +42,7 @@ public ArrayList<Location> get_valid_moves() {
   public boolean move() {
     ArrayList<Location> validMoves = get_valid_moves();
 	
-    if (!validMoves.isEmpty()) {
+    if (validMoves.isEmpty()) {
       return false;
     }
     
