@@ -65,7 +65,7 @@ public class Map {
     Location prevLoc = locations.get(name);
 
     // Change items
-    components.get(name).setLocation(loc.y, loc.x);
+    components.get(name).setLocation(loc.x, loc.y);
     locations.replace(name, loc);
     field.get(loc).add(type);
 
