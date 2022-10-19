@@ -66,7 +66,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
 
@@ -76,7 +76,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
       
@@ -87,7 +87,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
 
@@ -97,7 +97,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
 
@@ -107,27 +107,27 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
 
     // to the top
-    loc = new Location(x_val, y_val - 1);
-    types_at_loc = this.myMap.getLoc(loc);
-
-    for (Map.Type type : types_at_loc) {
-      if (type.equals(Map.Type.GHOST)) {
-        return false;
-      }
-    }
-
-    // to the bottom
     loc = new Location(x_val, y_val + 1);
     types_at_loc = this.myMap.getLoc(loc);
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
+      }
+    }
+
+    // to the bottom
+    loc = new Location(x_val, y_val - 1);
+    types_at_loc = this.myMap.getLoc(loc);
+
+    for (Map.Type type : types_at_loc) {
+      if (type.equals(Map.Type.GHOST)) {
+        return true;
       }
     }
 
@@ -137,7 +137,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
 
@@ -147,7 +147,7 @@ public ArrayList<Location> get_valid_moves() {
 
     for (Map.Type type : types_at_loc) {
       if (type.equals(Map.Type.GHOST)) {
-        return false;
+        return true;
       }
     }
     return false;
