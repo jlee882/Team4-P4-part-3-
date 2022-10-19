@@ -39,7 +39,8 @@ public class Map {
   public void add(String name, Location loc, JComponent comp, Type type) {
     locations.put(name, loc);
     components.put(name, comp);
-    if (!field.containsKey(loc)) field.put(loc, new HashSet<Type>());
+    if (!field.containsKey(loc))
+      field.put(loc, new HashSet<Type>());
     field.get(loc).add(type);
   }
 
@@ -51,33 +52,34 @@ public class Map {
     return gameOver;
   }
 
-  
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
 
-    //Check for existance of name and location in current map. No target validation
-    if (!locations.containsKey(name) || !components.containsKey(name) 
-      || !field.containsKey(loc)){
+    // Check for existance of name and location in current map. No target validation
+    if (!locations.containsKey(name) || !components.containsKey(name)
+        || !field.containsKey(loc)) {
       return false;
     }
 
     Location prevLoc = locations.get(name);
 
-    //Change items
+    // Change items
     components.get(name).setLocation(loc.y, loc.x);
     locations.replace(name, loc);
     field.get(loc).add(type);
 
-    //Cleanup
+    // Cleanup
     field.get(prevLoc).remove(type);
 
     return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
- 
-   return field.get(loc);
+    if (field.get(loc) == null) {
+      return emptySet;
+    }
+    return field.get(loc);
   }
 
   public boolean attack(String Name) {
@@ -100,11 +102,10 @@ public class Map {
         field.get(pacman_loc).remove(components.get(tok));
         cookies++;
         return ret_cookie;
-      }
-      else {
+      } else {
         return null;
       }
-      
+
     }
     return null;
   }
